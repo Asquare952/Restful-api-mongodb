@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 import authroute from "./routes/auth.js";
 import postroute from "./routes/post.js"
 import morgan from "morgan";
+import cors from "cors"
 
 // Load env variables
 dotenv.config();
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(morgan("dev"));
+app.use(cors());
 
 const PORT = process.env.PORT || 8000;
 
